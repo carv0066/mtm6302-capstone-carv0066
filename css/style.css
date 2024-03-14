@@ -1,0 +1,281 @@
+/* Styling background */
+body {
+    background-image: url("../images/background.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+/* Styling font sizes */
+
+h1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 64px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+p {
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    color: #D7D7D7;
+}
+
+label {
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #F28D62;
+}
+
+
+.button-div button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background-color: #F28D62;
+    border: none;
+    padding: 12px 42px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-div button:hover {
+    background-color: #FFA07A;
+}
+
+
+/* Styling title and paragraphs */
+.main-title{
+    text-align: center;
+    padding-top: 210px;
+}
+
+.main-title-2 {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.main-title-3 {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+.main-p {
+    text-align: center;
+    padding-top: 64px;
+    line-height: 32px;
+}
+
+.p2{
+    padding-top: 64px;
+    padding-bottom: 80px;
+    margin: 0 55px;
+    line-height: 32px;
+}
+
+.p-copyright {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.img-title{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.p-date {
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 50px;
+}
+
+/* Styling Form */
+
+.input-form {
+    display: flex;
+    justify-content: center;
+    padding-top: 64px;
+    padding-bottom: 20px;
+}
+
+.button-div {
+    text-align: center;
+}
+
+.month {
+    padding: 0px 10px 0px 10px;
+}
+
+.month-dp{
+    height: 58px;
+    width: 350px;
+    border-radius: 12px;
+}
+
+.day-input,
+.year-input{
+    height: 54px;
+    width: 80px;
+    border-radius: 12px;
+}
+
+select{
+    color: #F28D62;
+    padding: 12px 40px 12px 10px;
+}
+
+input,
+select {
+    color: #F28D62;
+    border: 1px solid #F28D62;
+    background-color:rgba(0,0,0,0.5);
+}
+
+/* Styling image of the day */
+
+.picofday {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* Orange Line */
+
+.orange-line {
+    height: 26px; 
+    background-color: #F28D62; 
+    margin: 0 55px;
+    border-radius: 12px;
+}
+
+/* Footer */
+
+.footer-pyramid {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-pyramid p {
+    margin: 5px;
+    font-size: 18px;
+}
+
+/* Favourites button */
+
+/* Styling for the square button container */
+.square-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0 55px;
+}
+
+/* Styling for the button */
+.square-button button {
+    background-color: #F28D62;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.square-button button:hover {
+    background-color: #FFA07A;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Styling for the button icon */
+.square-button button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
+
+/* Arrow to go back in favourites */
+
+.back-button {
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 5px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+
+.back-button img {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* Styling for grid */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px; 
+    justify-content: center;
+}
+
+
+.image {
+    width: 30%; 
+    margin: 5px;
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Styling for grid images */
+.grid-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* Load more button */
+
+.load-more-button {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+.load-more-button button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    background-color: #F28D62;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-button button:hover {
+    background-color: #FFA07A;
+}
