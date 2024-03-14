@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astronomy picture of the day!</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+
+    <!-- Title and Description -->
+    <div>
+        <h1 class="main-title">Astronomy Picture of the Day</h1>
+        <p class="main-p">Use the form below to select a date. Please ensure that the chosen date is not in the future to receive
+            accurate APOD information.</p>
+    </div>
+
+    <!-- Form to choose date for the astronomy picture -->
+    <form action="#">
+        <div class="input-form">
+            <div>
+                <label for="day">Day</label><br>
+            <input type="text" id="day" name="day">
+            </div>
+            <div>
+                <label for="Month">Month</label><br>
+                <select id="Month" name="Month">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+            </div>
+            <div>
+                <label for="Year">Year</label><br>
+                <input type="text" id="Year" name="year">
+            </div>
+        </div>
+        <div class="button-div">
+            <input type="button" value="Continue" class="button">
+        </div>
+    </form>
+
+
+
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>

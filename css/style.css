@@ -1,0 +1,66 @@
+/* Styling background */
+body {
+    background-image: url("../images/background.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+/* Styling font sizes */
+
+h1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 64px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+p {
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    color: #D7D7D7;
+}
+
+label {
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #F28D62;
+}
+
+input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    color: #FFFFFF;
+}
+
+.button {
+    background-color:#F28D62;
+    border: none;
+}
+
+
+/* Styling title and paragraphs */
+.main-title{
+    text-align: center;
+    padding-top: 210px;
+}
+
+.main-p {
+    text-align: center;
+    padding-top: 64px;
+}
+
+/* Styling Form */
+
+.input-form {
+    display: flex;
+    justify-content: center;
+    padding-top: 64px;
+}
+
+.button-div {
+    text-align: center;
+}
