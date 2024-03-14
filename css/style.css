@@ -15,6 +15,13 @@ h1{
     color: #FFFFFF;
 }
 
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
 p {
     font-family: "Libre Franklin", sans-serif;
     font-size: 20px;
@@ -29,15 +36,13 @@ label {
     color: #F28D62;
 }
 
-input {
+
+.button-div button {
     font-family: "Montserrat", sans-serif;
     font-size: 24px;
     font-weight: normal;
     color: #FFFFFF;
-}
-
-.button {
-    background-color:#F28D62;
+    background-color: #F28D62;
     border: none;
     padding: 12px 42px;
     border-radius: 12px;
@@ -45,7 +50,7 @@ input {
     transition: background-color 0.3s ease;
 }
 
-input.button:hover {
+.button-div button:hover {
     background-color: #FFA07A;
 }
 
@@ -56,9 +61,44 @@ input.button:hover {
     padding-top: 210px;
 }
 
+.main-title-2 {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.main-title-3 {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
 .main-p {
     text-align: center;
     padding-top: 64px;
+    line-height: 32px;
+}
+
+.p2{
+    padding-top: 64px;
+    padding-bottom: 80px;
+    margin: 0 55px;
+    line-height: 32px;
+}
+
+.p-copyright {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.img-title{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.p-date {
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 50px;
 }
 
 /* Styling Form */
@@ -98,6 +138,143 @@ select{
 
 input,
 select {
+    color: #F28D62;
     border: 1px solid #F28D62;
     background-color:rgba(0,0,0,0.5);
+}
+
+/* Styling image of the day */
+
+.picofday {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* Orange Line */
+
+.orange-line {
+    height: 26px; 
+    background-color: #F28D62; 
+    margin: 0 55px;
+    border-radius: 12px;
+}
+
+/* Footer */
+
+.footer-pyramid {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-pyramid p {
+    margin: 5px;
+    font-size: 18px;
+}
+
+/* Favourites button */
+
+/* Styling for the square button container */
+.square-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0 55px;
+}
+
+/* Styling for the button */
+.square-button button {
+    background-color: #F28D62;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.square-button button:hover {
+    background-color: #FFA07A;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Styling for the button icon */
+.square-button button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
+/* Arrow to go back in favourites */
+
+.back-button {
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 5px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+
+.back-button img {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* Styling for grid */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px; 
+    justify-content: center;
+}
+
+
+.image {
+    width: 30%; 
+    margin: 5px;
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Styling for grid images */
+.grid-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* Load more button */
+
+.load-more-button {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+.load-more-button button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    background-color: #F28D62;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-button button:hover {
+    background-color: #FFA07A;
 }
