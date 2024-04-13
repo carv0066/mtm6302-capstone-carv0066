@@ -1,3 +1,9 @@
+/*  hide all sections except the home section */
+#pictureofday-section,
+#favourites-section {
+    display: none;
+}
+
 /* Styling background */
 body {
     background-image: url("../images/background.jpg");
@@ -7,19 +13,22 @@ body {
 }
 
 /* Styling font sizes */
-
-h1{
+h1,
+h3,
+p {
     font-family: "Montserrat", sans-serif;
-    font-size: 64px;
-    font-weight: bold;
     color: #FFFFFF;
 }
 
+h1 {
+    font-size: 64px;
+    font-weight: bold;
+}
+
 h3 {
-    font-family: "Montserrat", sans-serif;
+    text-align: center;
     font-size: 32px;
     font-weight: bold;
-    color: #FFFFFF;
 }
 
 p {
@@ -29,47 +38,14 @@ p {
     color: #D7D7D7;
 }
 
-label {
-    font-family: "Libre Franklin", sans-serif;
-    font-size: 12px;
-    font-weight: normal;
-    color: #F28D62;
-}
-
-
-.button-div button {
-    font-family: "Montserrat", sans-serif;
-    font-size: 24px;
-    font-weight: normal;
-    color: #FFFFFF;
-    background-color: #F28D62;
-    border: none;
-    padding: 12px 42px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.button-div button:hover {
-    background-color: #FFA07A;
-}
-
-
 /* Styling title and paragraphs */
-.main-title{
+.pictureofday-container{
+    padding: 0px 100px;
+}
+
+.main-title {
     text-align: center;
     padding-top: 210px;
-}
-
-.main-title-2 {
-    text-align: center;
-    padding-top: 100px;
-}
-
-.main-title-3 {
-    text-align: center;
-    padding-top: 80px;
-    padding-bottom: 60px;
 }
 
 .main-p {
@@ -78,78 +54,30 @@ label {
     line-height: 32px;
 }
 
-.p2{
-    padding-top: 64px;
-    padding-bottom: 80px;
-    margin: 0 55px;
+.main-title-pic {
+    text-align: center;
+    padding-top: 60px;
+}
+
+
+.main-p-pic {
+    padding-top: 24px;
     line-height: 32px;
+    padding-bottom: 40px;
 }
 
-.p-copyright {
+.date-p-pic {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 24px;
+    line-height: 32px;
+    font-size: 16px;
 }
 
-.img-title{
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-.p-date {
-    text-align: center;
-    font-size: 24px;
-    padding-bottom: 50px;
-}
-
-/* Styling Form */
-
-.input-form {
-    display: flex;
-    justify-content: center;
-    padding-top: 64px;
-    padding-bottom: 20px;
-}
-
-.button-div {
-    text-align: center;
-}
-
-.month {
-    padding: 0px 10px 0px 10px;
-}
-
-.month-dp{
-    height: 58px;
-    width: 350px;
-    border-radius: 12px;
-}
-
-.day-input,
-.year-input{
-    height: 54px;
-    width: 80px;
-    border-radius: 12px;
-}
-
-select{
-    color: #F28D62;
-    padding: 12px 40px 12px 10px;
-}
-
-input,
-select {
-    color: #F28D62;
-    border: 1px solid #F28D62;
-    background-color:rgba(0,0,0,0.5);
-}
-
-/* Styling image of the day */
-
-.picofday {
+.picofday-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
-
+    width: 60%;
 }
 
 /* Orange Line */
@@ -161,73 +89,136 @@ select {
     border-radius: 12px;
 }
 
-/* Footer */
+/* Styling Form */
 
-.footer-pyramid {
+.input-form {
+    text-align: center;
+}
+
+.input-form input[type="date"] {
+    display: block; 
+    margin: 0 auto; 
+    margin-bottom: 10px; 
+    color: #F28D62;
+    border: 1px solid #F28D62;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.input-form input[type="button"] {
+    display: block; 
+    margin: 0 auto; 
+    background-color: #FFA07A;
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+}
+
+.input-form input[type="button"]:hover {
+    background-color: #fa5b1c; 
+}
+
+/* Style the date input */
+.input-form input[type="date"] {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+}
+
+/* Style for hover state */
+.input-form input[type="date"]:hover {
+    border-color: #FFA07A; 
+}
+
+/* Style for focus state */
+.input-form input[type="date"]:focus {
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}
+
+/* Adjust color of the date input icon */
+.input-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(70%);
+    color: #FFA07A;
+}
+
+/* Styling image of the day */
+.picofday {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+footer {
     text-align: center;
     padding: 20px;
 }
 
-.footer-pyramid p {
+footer p {
     margin: 5px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 /* Favourites button */
 
-/* Styling for the square button container */
 .square-button {
     position: absolute;
     top: 20px;
     right: 20px;
-    margin: 0 55px;
+    z-index: 999; 
 }
 
-/* Styling for the button */
 .square-button button {
     background-color: #F28D62;
     border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     cursor: pointer;
     padding: 5px;
 }
 
 .square-button button:hover {
     background-color: #FFA07A;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px;
 }
 
-/* Styling for the button icon */
 .square-button button img {
     width: 100%;
     height: 100%;
-    border-radius: 5px;
 }
 
+/* Style for "Add to favourites" button */
+.button-container{
+    text-align: center;
+    padding-bottom: 20px;
+}
 
-
-/* Arrow to go back in favourites */
-
-.back-button {
-    display: inline-block;
-    background: none;
+.add-fav {
+    background-color: #FFA07A;
+    color: #fff; 
     border: none;
-    padding: 5px;
-    margin: 0 20px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 5px; 
+    transition: background-color 0.3s;
 }
 
+.add-fav:hover {
+    background-color: #fa5b1c; 
+}
 
-.back-button img {
-    width: 50px;
-    height: 50px;
+/* Space icon */
+.space-icon {
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -235,13 +226,12 @@ select {
 .image-grid {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -5px; 
+    margin: 0 -5px;
     justify-content: center;
 }
 
-
 .image {
-    width: 30%; 
+    width: 30%;
     margin: 5px;
     height: 200px;
     overflow: hidden;
@@ -254,9 +244,7 @@ select {
     object-fit: cover;
 }
 
-
 /* Load more button */
-
 .load-more-button {
     text-align: center;
     padding-top: 40px;
