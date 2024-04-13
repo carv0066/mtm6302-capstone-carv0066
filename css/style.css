@@ -142,7 +142,7 @@ p {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
 }
 
-/* Adjust color of the date input icon */
+/* Adjust color of the date input icon*/
 .input-form input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(70%);
     color: #FFA07A;
