@@ -51,22 +51,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Function to display favorites from local storage
-function displayFavourites() {
-    const favorites = JSON.parse(localStorage.getItem('favorites'));
-
-    favouritesSection.innerHTML = '';
-
-    if (favorites && favorites.length > 0) {
-        favorites.forEach(favorite => {
-            const img = document.createElement('img');
-            img.src = favorite.imageUrl;
-            img.alt = favorite.altText;
-            favouritesSection.appendChild(img);
-        });
-    } else {
-        favouritesSection.textContent = 'You have no favorites yet.';
+    function displayFavourites() {
+        const favorites = JSON.parse(localStorage.getItem('favorites'));
+    
+        const imageGrid = document.querySelector('.image-grid');
+        imageGrid.innerHTML = ''; 
+    
+        if (favorites && favorites.length > 0) {
+            favorites.forEach(favorite => {
+                const imageDiv = document.createElement('div');
+                imageDiv.classList.add('image');
+    
+                const img = document.createElement('img');
+                img.src = favorite.imageUrl;
+                img.alt = favorite.altText;
+                img.classList.add('grid-image');
+    
+                imageDiv.appendChild(img);
+                imageGrid.appendChild(imageDiv); // Append to the image grid
+            });
+        } else {
+            imageGrid.textContent = 'You have no favorites yet.';
+        }
     }
-}
+    
 
 displayFavourites();
 

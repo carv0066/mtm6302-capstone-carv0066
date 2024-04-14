@@ -221,28 +221,30 @@ footer p {
     height: 100%;
 }
 
-
-/* Styling for grid */
+/* CSS for the grid layout */
 .image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -5px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    grid-gap: 10px;
 }
 
+/* CSS for the image container */
 .image {
-    width: 30%;
+    width: 100%;
+    height: auto;
     margin: 5px;
-    height: 200px;
-    overflow: hidden;
+    max-width: 100%; /* Ensures images don't exceed their container width */
 }
 
-/* Styling for grid images */
+/* CSS for the image */
 .grid-image {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
+
+
+
 
 /* Load more button */
 .load-more-button {
