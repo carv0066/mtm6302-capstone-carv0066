@@ -46,9 +46,12 @@ This project aims to create a web application that allows users to explore the A
 - [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 - [filter examples](https://www.freecodecamp.org/news/filter-arrays-in-javascript/)
 - [Codepen Example](https://codepen.io/carv0066/pen/rNbzXby)
+- [Background Image](https://www.w3schools.com/cssref/css3_pr_background-size.php)
 
 ## Challenges Faced
 
 - Implementing localStorage was the thing i found the hardest in the beginning as I found it a bit confusing for storing and retrieving favorite images locally.
 - Learning How to display different sections with just one HTML document as it was something I had never don before
 - Implementing the modal functionality after clicking in the image was hard as it when it came to making it work in the favourites section.
+
+Finished.
