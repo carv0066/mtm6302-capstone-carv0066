@@ -226,6 +226,8 @@ footer p {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
     grid-gap: 10px;
+    color: white; 
+    font-size: 24px;
 }
 
 /* CSS for the image container */

@@ -53,3 +53,5 @@ This project aims to create a web application that allows users to explore the A
 - Implementing localStorage was the thing i found the hardest in the beginning as I found it a bit confusing for storing and retrieving favorite images locally.
 - Learning How to display different sections with just one HTML document as it was something I had never don before
 - Implementing the modal functionality after clicking in the image was hard as it when it came to making it work in the favourites section.
+
+Finished.

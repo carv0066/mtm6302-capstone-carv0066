@@ -100,7 +100,8 @@ function removeFromFavorites(imageContainer) {
                 imageGrid.appendChild(imageDiv); // Append to the image grid
             });
         } else {
-            imageGrid.textContent = 'You have no favorites yet.';
+            imageGrid.textContent = 'You have no favorites yet. Make sure to add the best ones!';
+
         }
     }
     
