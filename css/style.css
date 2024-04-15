@@ -221,28 +221,30 @@ footer p {
     height: 100%;
 }
 
-
-/* Styling for grid */
+/* CSS for the grid layout */
 .image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -5px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    grid-gap: 10px;
 }
 
+/* CSS for the image container */
 .image {
-    width: 30%;
+    width: 100%;
+    height: auto;
     margin: 5px;
-    height: 200px;
-    overflow: hidden;
+    max-width: 100%; /* Ensures images don't exceed their container width */
 }
 
-/* Styling for grid images */
+/* CSS for the image */
 .grid-image {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
+
+
+
 
 /* Load more button */
 .load-more-button {
@@ -267,3 +269,161 @@ footer p {
 .load-more-button button:hover {
     background-color: #FFA07A;
 }
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content img {
+    max-width: 1000px; 
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style for the image container */
+.image {
+    position: relative; 
+    display: inline-block; 
+}
+
+/* Style for the remove button */
+.remove-button {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: #FFA07A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+    display: none; /* Hide the button by default */
+}
+
+
+.image:hover .remove-button {
+    display: block;
+}
+
+.remove-button:hover {
+    background-color: #fa5b1c;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+
+
+    .pictureofday-container {
+        padding: 0px 20px;
+    }
+
+    .main-title {
+        padding-top: 100px;
+        font-size: 32px;
+    }
+
+    .main-p {
+        padding-top: 32px;
+        font-size: 16px;
+    }
+
+    .main-title-pic {
+        padding-top: 40px;
+        font-size: 24px;
+    }
+
+    .main-p-pic {
+        padding-top: 16px;
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+
+    .date-p-pic {
+        padding-top: 16px;
+        font-size: 12px;
+    }
+
+    .picofday-image {
+        width: 100%;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr); /* One column for small screens */
+    }
+
+
+    .square-button {
+        top: 10px;
+        right: 10px;
+    }
+
+    .square-button button {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Adjust modal size for smaller screens */
+    .modal-content {
+        margin: 15% auto;
+        width: 85%; 
+        max-width: none; 
+        border-radius: 0; 
+    }
+
+    .modal-content img {
+        max-width: 100%;
+        height: auto; 
+    }
+
+      /* Adjust the size of the square button (arrow) */
+    .square-button button {
+        width: 30px;
+        height: 30px;
+    }
+
+    #favourites-section h1 {
+        font-size: 30px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+
+

@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Show the selected section    
         section.style.display = 'block';
+
+        if (section === favouritesSection) {
+            setupAddToFavorites();
+            setupModalForFavorites();
+        }
     }
 
     // Click on favourites icon and go to favourites
@@ -20,11 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function () {
             showSection(favouritesSection);
 
-            setupAddToFavoritesListener();
         });
     });
 
-    // Function to save favorites to local storage
+
+
     function saveToFavorites(imageUrl, altText) {
         let favourites = JSON.parse(localStorage.getItem('favorites')) || [];
 
@@ -34,8 +39,20 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('favorites', JSON.stringify(favourites));
     }
 
+
+    // Function to remove an image from favorites
+function removeFromFavorites(imageContainer) {
+    
+    imageContainer.remove();
+
+    const imageUrl = imageContainer.querySelector('.grid-image').src;
+    const altText = imageContainer.querySelector('.grid-image').alt;
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const updatedFavorites = favorites.filter(favorite => favorite.imageUrl !== imageUrl || favorite.altText !== altText);
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+}
     // Function to set up event listener for the "Add to favorites" button
-    function setupAddToFavoritesListener() {
+    function setupAddToFavorites() {
         const addToFavourites = document.getElementById("add-fav");
         if (addToFavourites) {
             addToFavourites.addEventListener("click", function() {
@@ -43,30 +60,50 @@ document.addEventListener('DOMContentLoaded', function() {
                 const imageUrl = document.querySelector('.picofday-image').src;
                 const altText = document.querySelector('.picofday-image').alt;
 
-                // Save the image to favorites
+                
                 saveToFavorites(imageUrl, altText);
                 console.log("Image added to favorites.");
+
+                // Update the display in favourites section so it shows the new image added inmediatly
+                displayFavourites();
             });
         }
     }
 
     // Function to display favorites from local storage
-function displayFavourites() {
-    const favorites = JSON.parse(localStorage.getItem('favorites'));
+    function displayFavourites() {
+        const favorites = JSON.parse(localStorage.getItem('favorites'));
+    
+        const imageGrid = document.querySelector('.image-grid');
+        imageGrid.innerHTML = ''; 
+    
+        if (favorites && favorites.length > 0) {
+            favorites.forEach(favorite => {
+                const imageDiv = document.createElement('div');
+                imageDiv.classList.add('image');
+    
+                const img = document.createElement('img');
+                img.src = favorite.imageUrl;
+                img.alt = favorite.altText;
+                img.classList.add('grid-image');
+    
+                const removeButton = document.createElement('button');
+                removeButton.innerText = 'Remove';
+                removeButton.classList.add('remove-button');
 
-    favouritesSection.innerHTML = '';
+                removeButton.addEventListener('click', function() {
+                    removeFromFavorites(imageDiv);
+                });
 
-    if (favorites && favorites.length > 0) {
-        favorites.forEach(favorite => {
-            const img = document.createElement('img');
-            img.src = favorite.imageUrl;
-            img.alt = favorite.altText;
-            favouritesSection.appendChild(img);
-        });
-    } else {
-        favouritesSection.textContent = 'You have no favorites yet.';
+                imageDiv.appendChild(img);
+                imageDiv.appendChild(removeButton); 
+                imageGrid.appendChild(imageDiv); // Append to the image grid
+            });
+        } else {
+            imageGrid.textContent = 'You have no favorites yet.';
+        }
     }
-}
+    
 
 displayFavourites();
 
@@ -98,8 +135,12 @@ displayFavourites();
                 <h3>${data.title}</h3>
                 <p class="date-p-pic">${data.date}</p>
             <div>
-                <img src="${data.url}" alt="picture of the day" class="picofday-image">
+                <img src="${data.url}"
+                alt="picture of the day"
+                class="picofday-image"
+                >
             </div>
+            <div id="modal" class="modal"></div>
                 <p class="date-p-pic">Image Credit & Copyright: ${data.copyright}</p>
             </div>
             <div class="button-container">
@@ -127,18 +168,77 @@ displayFavourites();
             // Show the picture of the day section
             showSection(pictureOfDaySection);
 
-            setupShowFavouritesListener();
-            setupAddToFavoritesListener();
+            setupShowFavourites();
+            setupAddToFavorites();
+
+            const imageResizeMain = document.querySelector('.picofday-image');
+
+            //Click on image to resize it
+            imageResizeMain.addEventListener("click", function () {
+                console.log("you clicked on the image")
+                openModal(data.hdurl);
+                });
+
+        });
+    }
+
+    // Function to open modal with image
+    function openModal(imageUrl) {
+        const modal = document.querySelector('.modal');
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="${imageUrl}" alt="picture of the day large" class="modal-image">
+            </div>
+        `;
+        modal.style.display = "block";
+
+        
+        const closeModal = document.querySelector('.close');
+        closeModal.addEventListener("click", function () {
+            modal.style.display = "none";
         });
     }
 
     // Function to set up event listener for the "show-favourites" button
-    function setupShowFavouritesListener() {
+    function setupShowFavourites() {
         const showFavouritesButton = document.querySelector('#pictureofday-section .show-favourites');
         if (showFavouritesButton) {
             showFavouritesButton.addEventListener('click', function () {
                 showSection(favouritesSection);
+                setupModalForFavorites();
             });
         }
     }
+
+  // Function for modal for favorite images
+function setupModalForFavorites() {
+    const favoriteImages = document.querySelectorAll('.grid-image');
+    favoriteImages.forEach(image => {
+        image.addEventListener('click', function () {
+            const imageUrl = this.src;
+            openModal(imageUrl);
+        });
+    });
+}
+
+// Function to open modal with larger image
+function openModal(imageUrl) {
+    const modal = document.querySelector('.modal');
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="${imageUrl}" alt="larger image" class="modal-image">
+        </div>
+    `;
+    modal.style.display = "block";
+
+
+    const closeModal = document.querySelector('.close');
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+}
+
+setupModalForFavorites(); 
 });
