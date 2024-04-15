@@ -46,6 +46,7 @@ This project aims to create a web application that allows users to explore the A
 - [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 - [filter examples](https://www.freecodecamp.org/news/filter-arrays-in-javascript/)
 - [Codepen Example](https://codepen.io/carv0066/pen/rNbzXby)
+- [Background Image](https://www.w3schools.com/cssref/css3_pr_background-size.php)
 
 ## Challenges Faced
 

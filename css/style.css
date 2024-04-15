@@ -347,10 +347,22 @@ footer p {
     background-color: #fa5b1c;
 }
 
+
+#favourites-section h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
+    #home-section,
+    #pictureofday-section,
+    #favourites-section {
+        margin: 0 20px; 
+    }
 
-
+    
     .pictureofday-container {
         padding: 0px 20px;
     }
@@ -389,7 +401,6 @@ footer p {
         grid-template-columns: repeat(1, 1fr); /* One column for small screens */
     }
 
-
     .square-button {
         top: 10px;
         right: 10px;
@@ -403,27 +414,41 @@ footer p {
     /* Adjust modal size for smaller screens */
     .modal-content {
         margin: 15% auto;
-        width: 85%; 
-        max-width: none; 
-        border-radius: 0; 
+        width: 85%;
+        max-width: none;
+        border-radius: 0;
     }
 
     .modal-content img {
         max-width: 100%;
-        height: auto; 
+        height: auto;
     }
 
-      /* Adjust the size of the square button (arrow) */
-    .square-button button {
-        width: 30px;
-        height: 30px;
-    }
 
     #favourites-section h1 {
         font-size: 30px;
         text-align: center;
         padding-bottom: 20px;
     }
+
+/* Set height of html and body to 100% */
+html, body {
+    height: 100%;
 }
 
+/* Styling background */
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0; 
+    height: 100vh; 
+}
 
+.image:hover .remove-button {
+    display: inline-block;
+}
+
+}
